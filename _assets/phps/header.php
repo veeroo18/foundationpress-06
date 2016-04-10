@@ -23,14 +23,13 @@
 </head>
 
 <body id="page" <?php body_class(); ?>>
-	<div class="off-canvas-wrap" data-offcanvas>
-	  <div class="inner-wrap">
+	<div class="off-canvas-wrapper">
+	  <div class="off-canvas-wrapper-inner" data-off-canvas-wrapper>
 	  		<header id="header"  role="banner">
+				<?php // get_template_part('inc/theme','tabbar'); ?>
+	  			<?php //get_template_part('inc/tabbar','nav'); ?>
 				<!-- <a class="skip-link screen-reader-text show-for-small" href="#content"><?php // _e( 'Skip to content', 'fp5' ); ?></a> -->	
 				<!-- plann : topbar offcanvas and drop down menu style options will be added in backend of theme -->
 				<?php get_template_part('inc/theme','topbar'); ?>
-				<?php //get_template_part('inc/theme','tabbar'); ?>
 			</header>
-				<?php //get_template_part('inc/tabbar','nav'); ?>
-			
-		<div id="content" class="site-content">
+<div id="content"  class="off-canvas-content site-content" data-off-canvas-content>

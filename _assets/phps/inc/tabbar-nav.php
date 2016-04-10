@@ -1,19 +1,11 @@
-<aside class="left-off-canvas-menu">
+<div class="off-canvas position-left" id="offCanvas" data-off-canvas>
+<aside>
      <?php wp_nav_menu( array(
                 'menu_id'=>'primary',
                 'menu_class'=>'off-canvas-list',
                 'container' =>'section',           
-                'walker' => new fp4_walker_nav_menu,
+                'walker' => new Off_Canvas_Menu_Walker,
                 'depth'=>'0',
                 'theme_location' => 'primary')); ?>
-    </aside>
-    <!-- <aside class="right-off-canvas-menu">
-      <ul class="off-canvas-list">
-        <li><label>Users</label></li>
-        <li><a href="#">Hari Seldon</a></li>
-        <li><a href="#">...</a></li>
-      </ul>
-      <div class="widget">
-        
-      </div>
-    </aside> -->
+</aside>
+</div>
