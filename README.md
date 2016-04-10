@@ -1,8 +1,7 @@
 # Foundation 6 wordpress theme / fp6
 by Veerendra Tikhe @veeroo18
-**Please open all issues with this template on the main [Foundation for Sites](https://github.com/zurb/foundation-sites/issues) repo.**
 
-This is the basic starter project for [Foundation for Sites 6](http://foundation.zurb.com/sites). It includes a Sass compiler and a starter HTML file for you.
+This is the basic starter project, It includes a Sass compiler and a starter php files for you.
 
 ## Installation
 
@@ -10,7 +9,8 @@ To use this template, your computer needs:
 
 - [NodeJS](https://nodejs.org/en/) (0.10 or greater)
 - [Git](https://git-scm.com/)
-
+- local / web wordpress installation
+- 
 This template can be installed with the Foundation CLI, or downloaded and set up manually.
 
 ### Using the CLI
