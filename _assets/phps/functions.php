@@ -42,11 +42,6 @@ function foundation_6_setup() {
 	 */
 	add_theme_support( 'post-thumbnails' );
 
-	// This theme uses wp_nav_menu() in one location.
-	register_nav_menus( array(
-		'primary' => esc_html__( 'Primary', 'foundation-6' ),
-	) );
-
 	/*
 	 * Switch default core markup for search form, comment form, and comments
 	 * to output valid HTML5.
@@ -126,6 +121,64 @@ function foundation_6_scripts() {
 	}
 }
 add_action( 'wp_enqueue_scripts', 'foundation_6_scripts' );
+
+// adding new walker from wp-forge.
+/**
+ * Walkers and menu functions for menus. Big thanks to Jeremy Englert of JointsWP for allowing usage.
+ * @see http://jointswp.com/
+ * @since WP-Forge 6.2
+ */
+// Top-Bar Menu Walker
+class Topbar_Menu_Walker extends Walker_Nav_Menu {
+    function start_lvl(&$output, $depth = 0, $args = Array() ) {
+        $indent = str_repeat("\t", $depth);
+        $output .= "\n$indent<ul class=\"menu\">\n";
+    }
+}
+// Off-Canvas Menu Walker
+class Off_Canvas_Menu_Walker extends Walker_Nav_Menu {
+    function start_lvl(&$output, $depth = 0, $args = Array() ) {
+        $indent = str_repeat("\t", $depth);
+        $output .= "\n$indent<ul class=\"menu vertical nested\">\n";
+    }
+}
+// Top-Bar Menu function
+if ( ! function_exists( 'wpforge_top_nav' ) ) {
+	function wpforge_top_nav() {
+		 wp_nav_menu(array(
+		 	'theme_location' => 'primary',
+	        'container' => false,
+	        'depth' => 0,
+	        'items_wrap' => '<ul class="menu vertical medium-horizontal" data-responsive-menu="drilldown medium-dropdown" data-parent-link="true">%3$s</ul>',
+	        'fallback_cb' => '',
+	        'walker' => new Topbar_Menu_Walker()
+	    ));
+	} 
+}
+// Off-Canvas Menu function
+if ( ! function_exists( 'wpforge_off_canvas_nav' ) ) {
+	function wpforge_off_canvas_nav() {
+		 wp_nav_menu(array(
+	        'container' => false,                           // Remove nav container
+	        'menu_class' => 'vertical menu',       			// Adding custom nav class
+	        'items_wrap' => '<ul id="%1$s" class="%2$s" data-accordion-menu data-parent-link="true">%3$s</ul>',
+	        'theme_location' => 'primary',        			// Where it's located in the theme
+	        'depth' => 0,                                   // Limit the depth of the nav
+	        'fallback_cb' => '',                         	// Fallback function (see below)
+	        'walker' => new Off_Canvas_Menu_Walker()
+	    ));
+	}
+}
+
+// This theme uses wp_nav_menu() in one location.
+register_nav_menus( array(
+	'primary' => esc_html__( 'Primary', 'foundation-6' ),
+	'footer' => esc_html__( 'Footer', 'foundation-6' )
+) );
+
+
+
+
 
 /**
  * Implement the Custom Header feature.
