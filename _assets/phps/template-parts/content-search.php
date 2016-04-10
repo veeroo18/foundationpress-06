@@ -11,20 +11,20 @@
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 	<header class="entry-header">
-		<?php the_title( sprintf( '<h2 class="entry-title"><a href="%s" rel="bookmark">', esc_url( get_permalink() ) ), '</a></h2>' ); ?>
-
-		<?php if ( 'post' === get_post_type() ) : ?>
-		<div class="entry-meta">
-			<?php foundation_6_posted_on(); ?>
-		</div><!-- .entry-meta -->
-		<?php endif; ?>
+		<div class="row"><?php the_title( sprintf( '<h2 class="entry-title"><a href="%s" rel="bookmark">', esc_url( get_permalink() ) ), '</a></h2>' ); ?>
+			
+			<?php if ( 'post' === get_post_type() ) : ?>
+			<div class="entry-meta">
+				<?php foundation_6_posted_on(); ?>
+			</div><!-- .entry-meta -->
+			<?php endif; ?></div>
 	</header><!-- .entry-header -->
 
 	<div class="entry-summary">
-		<?php the_excerpt(); ?>
+		<div class="row"><?php the_excerpt(); ?></div>
 	</div><!-- .entry-summary -->
 
 	<footer class="entry-footer">
-		<?php foundation_6_entry_footer(); ?>
+		<div class="row"><?php foundation_6_entry_footer(); ?></div>
 	</footer><!-- .entry-footer -->
 </article><!-- #post-## -->

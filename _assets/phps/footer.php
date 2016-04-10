@@ -4,7 +4,7 @@
  *
  * Contains the closing of the #content div and all content after
  *
- * @package fp5
+ * @package fp6
  */
 ?>
 	<a class="exit-off-canvas"></a>

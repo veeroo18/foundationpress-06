@@ -16,6 +16,13 @@ get_header(); ?>
 
 	<div id="primary" class="content-area">
 		<main id="main" class="site-main" role="main">
+			<?php
+			 if (is_front_page()|| is_home()) {
+				echo'<h2>Only Displays On The Front Page</h2>';
+				# code...				
+			}
+			
+			get_template_part('inc/theme','banner'); ?>
 
 			<?php
 			while ( have_posts() ) : the_post();
