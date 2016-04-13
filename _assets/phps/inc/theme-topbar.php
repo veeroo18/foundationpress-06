@@ -18,10 +18,20 @@
 			  	  <span data-responsive-toggle="responsive-menu" data-hide-for="medium">
 			  	    <button class="menu-icon dark" type="button" data-toggle></button>
 			  	  </span>
-			  	  <a href=" <?php echo home_url(); ?> ">
-			  					<img class="svg" src="<?php echo get_stylesheet_directory_uri(); ?>/images/logo.svg" />							
-			  					<?php bloginfo('name')?>
-			  				</a>
+			  	  <div class="site-branding">
+	  					<?php foundation_6_the_custom_logo(); ?>
+
+	  					<?php if ( is_front_page() && is_home() ) : ?>
+	  						<h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
+	  					<?php else : ?>
+	  						<p class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></p>
+	  					<?php endif;
+
+	  					$description = get_bloginfo( 'description', 'display' );
+	  					if ( $description || is_customize_preview() ) : ?>
+	  						<p class="site-description"><?php echo $description; ?></p>
+	  					<?php endif; ?>
+	  	    	  	</div><!-- .site-branding -->
 			  	</div>
 			  	<div id="responsive-menu">
 			  	  <div class="top-bar-right">

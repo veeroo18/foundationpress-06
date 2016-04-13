@@ -120,3 +120,18 @@ function foundation_6_category_transient_flusher() {
 }
 add_action( 'edit_category', 'foundation_6_category_transient_flusher' );
 add_action( 'save_post',     'foundation_6_category_transient_flusher' );
+
+if ( ! function_exists( 'foundation_6_the_custom_logo' ) ) :
+/**
+ * Displays the optional custom logo.
+ *
+ * Does nothing if the custom logo is not available.
+ *
+ * @since Twenty Sixteen 1.2
+ */
+function foundation_6_the_custom_logo() {
+	if ( function_exists( 'the_custom_logo' ) ) {
+		the_custom_logo();
+	}
+}
+endif;

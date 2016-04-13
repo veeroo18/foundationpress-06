@@ -27,6 +27,15 @@ function foundation_6_setup() {
 	// Add default posts and comments RSS feed links to head.
 	add_theme_support( 'automatic-feed-links' );
 
+	// custom logo 4/13/2016 1:08:18 PM
+	add_theme_support( 'custom-logo', array(
+			'height'      => 100,
+			'width'       => 400,
+			'flex-width' => true,
+	) );
+
+	add_action( 'after_setup_theme', 'theme_prefix_setup' );
+
 	/*
 	 * Let WordPress manage the document title.
 	 * By adding theme support, we declare that this theme does not use a
@@ -112,8 +121,8 @@ function foundation_6_scripts() {
 	wp_enqueue_style( 'foundation-6-style', get_stylesheet_uri() );
 	wp_enqueue_style( 'foundation-6-app-style', get_template_directory_uri() .'/css/app.min.css' );
 
-	wp_enqueue_script( 'foundation-6-jquery', get_template_directory_uri() . '/js/jquery.min.js', array(), '', true );
-	wp_enqueue_script( 'foundation-6-js', get_template_directory_uri() . '/js/foundation.min.js', array(), '', true );
+	//wp_enqueue_script( 'foundation-6-jquery', get_template_directory_uri() . '/js/jquery.min.js', array(), '', true );
+	//wp_enqueue_script( 'foundation-6-js', get_template_directory_uri() . '/js/foundation.min.js', array(), '', true );
 	wp_enqueue_script( 'foundation-6-navigation', get_template_directory_uri() . '/js/navigation.js', array(), '20151215', true );
 	wp_enqueue_script( 'foundation-6-skip-link-focus-fix', get_template_directory_uri() . '/js/skip-link-focus-fix.js', array(), '20151215', true );
 	wp_enqueue_script( 'foundation-6-scripts', get_template_directory_uri() . '/js/app.min.js', array(), '', true );
