@@ -99,7 +99,7 @@ function vimeoPlayer ($atts) {
 		extract(shortcode_atts(array(
 		'title' => 'panel'
 		), $atts));
-		return '<div class="panel">'.do_shortcode($content).'</div>';
+		return '<div class="callout">'.do_shortcode($content).'</div>';
 	}
 	add_shortcode ('panel','panel');
 // tabs shortcode

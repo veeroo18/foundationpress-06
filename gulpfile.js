@@ -15,7 +15,7 @@ var buildPath = "c:/wamp/www/lab/wp-content/themes/fp6/" ; // launch folder
 
 // uglify minify js files 
 gulp.task('js-fef', function(){
-    return gulp.src(['_assets/js/jquery.min.js','_assets/js/foundation.min.js','_assets/js/app.js'])
+    return gulp.src(['_assets/js/app.js'])
         .pipe(sourcemaps.init())
         .pipe(concat('concat.js'))
         .pipe(gulp.dest('_assets/js/'))
@@ -63,9 +63,14 @@ gulp.task('buildImgs',function() {
 });
 
 
-gulp.task('default', ['js-fef','style','sass','buildPhps','buildImgs'], function() {
+gulp.task('buildJs',function() {
+  return gulp.src('./_assets/js/**/*.js')
+    .pipe(gulp.dest(buildPath+'/js'));
+});
+
+gulp.task('default', ['js-fef','style','sass','buildPhps','buildImgs','buildJs'], function() {
   gulp.watch(['_assets/scss/**/*.scss'], ['sass','style']),
-  gulp.watch(['_assets/js/**/*.js'], ['js-fef']),
+  gulp.watch(['_assets/js/**/*.js'], ['js-fef','buildJs']),
   gulp.watch(['_assets/images/**/*.*'], ['buildImgs']),
   gulp.watch(['_assets/phps/**/*.php'], ['buildPhps']);
 });
