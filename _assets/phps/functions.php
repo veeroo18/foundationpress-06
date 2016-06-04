@@ -204,6 +204,11 @@ register_nav_menus( array(
 	'footer' => esc_html__( 'Footer', 'foundation-6' )
 ) );
 
+/**
+ * add hatom data
+ */
+require get_template_directory() . '/inc/theme-hatom-data.php';
+
 
 /**
  * Implement shortcodes
