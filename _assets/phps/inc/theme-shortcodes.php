@@ -86,12 +86,12 @@ function vimeoPlayer ($atts) {
 	}
 	add_shortcode ('vimeo','vimeoPlayer');
 
-	/*columns from foundation*/
+	/*columns cell from foundation*/
 	function row ($atts, $content = '') {
 		extract(shortcode_atts(array(
 		'title' => 'row'
 		), $atts));
-		return '<div class="row" data-equalizer>'.do_shortcode($content).'</div>';
+		return '<div class="row grid-x" data-equalizer>'.do_shortcode($content).'</div>';
 	}
 	add_shortcode ('row','row');
 
@@ -180,31 +180,31 @@ function vimeoPlayer ($atts) {
 
 
 	/**
-	 * Columns Shortcodes
+	 * columns  cell Shortcodes
 	 *
 	 */
 	function onethird( $atts, $content = null ) {
-	   return '<div class="p0 medium-4 columns" data-equalizer-watch><div class="block">' . do_shortcode($content) . '</div></div>';
+	   return '<div class="p0 medium-4 columns cell" data-equalizer-watch><div class="block">' . do_shortcode($content) . '</div></div>';
 	}
 	add_shortcode('onethird', 'onethird');
 	
 	function twothird( $atts, $content = null ) {
-	   return '<div class="p0 medium-8 columns" data-equalizer-watch><div class="block">' . do_shortcode($content) . '</div></div>';
+	   return '<div class="p0 medium-8 columns cell" data-equalizer-watch><div class="block">' . do_shortcode($content) . '</div></div>';
 	}
 	add_shortcode('twothird', 'twothird');
 
 	function onehalf( $atts, $content = null ) {
-	   return '<div class="p0 medium-6 columns" data-equalizer-watch><div class="block">' . do_shortcode($content) . '</div></div>';
+	   return '<div class="p0 medium-6 columns cell" data-equalizer-watch><div class="block">' . do_shortcode($content) . '</div></div>';
 	}
 	add_shortcode('onehalf', 'onehalf');
 	
 	function onefourth( $atts, $content = null ) {
-	   return '<div class="p0 medium-3 columns" data-equalizer-watch><div class="block">' . do_shortcode($content) . '</div></div>';
+	   return '<div class="p0 medium-3 columns cell" data-equalizer-watch><div class="block">' . do_shortcode($content) . '</div></div>';
 	}
 	add_shortcode('onefourth', 'onefourth');
 	
 	function threefourth( $atts, $content = null ) {
-	   return '<div class="p0 medium-9 columns" data-equalizer-watch><div class="block">' . do_shortcode($content) . '</div></div>';
+	   return '<div class="p0 medium-9 columns cell" data-equalizer-watch><div class="block">' . do_shortcode($content) . '</div></div>';
 	}
 	add_shortcode('threefourth', 'threefourth');
 
@@ -223,18 +223,13 @@ function vimeoPlayer ($atts) {
 	}
 	add_shortcode('threefifth', 'threefifth');
 	
-	function fourfifth( $atts, $content = null ) {
-	   return '<div class="p0 fourfifth" data-equalizer-watch><div class="block">' . do_shortcode($content) . '</div></div>';
-	}
-	add_shortcode('fourfifth', 'fourfifth');
-	
 	function onesixth( $atts, $content = null ) {
-	   return '<div class="p0 small-3 medium-2 columns" data-equalizer-watch><div class="block">' . do_shortcode($content) . '</div></div>';
+	   return '<div class="p0 small-3 medium-2 columns cell" data-equalizer-watch><div class="block">' . do_shortcode($content) . '</div></div>';
 	}
 	add_shortcode('onesixth', 'onesixth');
 	
 	function fivesixth( $atts, $content = null ) {
-	   return '<div class="p0 medium-10 columns" data-equalizer-watch><div class="block">' . do_shortcode($content) . '</div></div>';
+	   return '<div class="p0 medium-10 columns cell" data-equalizer-watch><div class="block">' . do_shortcode($content) . '</div></div>';
 	}
 	add_shortcode('fivesixth', 'fivesixth');
 	
