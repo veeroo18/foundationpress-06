@@ -1,5 +1,5 @@
 # Foundation 6 wordpress theme / fp6
-by Veerendra Tikhe @veeroo18
+by Veerendra Tikhe @veerendratikhe
 
 This is the basic starter project, It includes a Sass compiler and a starter php files for you.
 
@@ -9,24 +9,27 @@ To use this template, your computer needs:
 
 - [NodeJS](https://nodejs.org/en/) (0.10 or greater)
 - [Git](https://git-scm.com/)
-- local / web wordpress installation
+- local WordPress installation
 - 
-This template can be installed with the Foundation CLI, or downloaded and set up manually.
 
-### Setup
+### Before Setup
+NOTE : You will need foundation cli, npm, node etc. installed on your system before you start here.
+This repository uses source and release concept, it keeps all source folders aside and creates / builds release folder at a location you set on your harddrive everytime you execute the command. It copies only changed files to same folder and updates your release theme.
 
-To manually set up the template, first download it with Git:
+### To manually Setup the theme, 
+- locate folder you want to create theme source.
+- open git bash in this folder
+- download repo from Github in this folder
 
 ```bash
 git clone https://github.com/veeroo18/foundationpress-06
 ```
-
-Then open the folder in your command line, and install the needed dependencies:
-you will need foundation cli, npm, node etc. installed on your system before you start here.
+- install the needed dependencies in git bash using following command
 ```bash
 npm install
-bower install
+```
+- open gulp.js and set up theme folder path , typically in Driveletter:/wp-installation/wp-content/themes/your-theme
+- execute following commands in git bash
+```bash
 foundation watch
 ```
-
-Finally, run `npm start` to run the Sass compiler. It will re-run every time you save a Sass file.
